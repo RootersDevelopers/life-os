@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Manrope", sans-serif;
+
+  --color-paper: #f3f5f1;
+  --color-card: #fdfdfc;
+  --color-line: #e4e8e1;
+  --color-ink: #131815;
+  --color-ink-soft: #3c4540;
+  --color-mute: #6d766f;
+
+  --color-night: #0d1310;
+  --color-night-2: #131b16;
+  --color-night-3: #1a241e;
+  --color-night-line: #24312a;
+
+  --color-brand-50: #effcf3;
+  --color-brand-100: #d8f7e1;
+  --color-brand-200: #b4eec8;
+  --color-brand-300: #7de0a5;
+  --color-brand-400: #40cc7d;
+  --color-brand-500: #1db463;
+  --color-brand-600: #12924f;
+  --color-brand-700: #117542;
+  --color-brand-800: #125d37;
+  --color-brand-900: #104c2f;
+
+  --color-danger: #e5484d;
+  --color-warn: #f5a524;
+  --color-info: #3b82f6;
+
+  --shadow-card: 0 1px 2px rgb(19 24 21 / 0.05), 0 4px 16px -8px rgb(19 24 21 / 0.12);
+  --shadow-pop: 0 8px 40px -8px rgb(13 19 16 / 0.28);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-brand-200);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgb(109 118 111 / 0.35);
+  border-radius: 99px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.anim-toast { animation: toast-in 0.22s cubic-bezier(0.2, 0.9, 0.3, 1); }
+.anim-modal { animation: modal-in 0.24s cubic-bezier(0.2, 0.9, 0.3, 1); }
+.anim-fade { animation: fade-in 0.2s ease; }
+.anim-rise { animation: rise 0.3s ease both; }
+
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+}
